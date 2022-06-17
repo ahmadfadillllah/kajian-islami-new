@@ -383,7 +383,7 @@ exports.Permutation = Permutation;
 /************************************************************************/
 /******/ 	// The module cache
 /******/ 	var __webpack_module_cache__ = {};
-/******/ 	
+/******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
 /******/ 		// Check if module is in cache
@@ -397,14 +397,14 @@ exports.Permutation = Permutation;
 /******/ 			// no module.loaded needed
 /******/ 			exports: {}
 /******/ 		};
-/******/ 	
+/******/
 /******/ 		// Execute the module function
 /******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
-/******/ 	
+/******/
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
-/******/ 	
+/******/
 /************************************************************************/
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
@@ -514,7 +514,7 @@ function showMosque(params) {
       var txtNameMosque = element.namamasjid;
       var txtAddressMosque = element.alamat;
       var txtTypeMosque = element.jeniskajian;
-      var urlImage = element.image_url; //    custome icon markers
+      var urlImage = element.gambar; //    custome icon markers
 
       var mosqueIcon = new L.Icon({
         iconSize: [27, 27],

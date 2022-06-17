@@ -119,7 +119,7 @@
                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-user">
                     <a class="dropdown-item" href=""><i class="me-50" data-feather="user"></i> Profile</a>
                     {{-- <div class="dropdown-divider"></div><a class="dropdown-item" href="page-account-settings-account.html"><i class="me-50" data-feather="settings"></i> Settings</a> --}}
-                    <form action="{{ route("logout") }}" method="post">
+                    <form action="{{ route("logout") }}" method="get">
                         @csrf
                         <button class="dropdown-item" type="submit"><i class="me-50" data-feather="power"></i> Logout</button>
                     </form>

@@ -49,16 +49,9 @@ class KajianIslamiController extends Controller
         $kajian->namapengurusmasjid = $request->namapengurusmasjid;
         $kajian->materidanwaktukajian = $request->materidanwaktukajian;
         $kajian->latlong = $request->latlong;
-
-        $kajian->no_hp = "0";
-        $kajian->jeniskajian = "0";
-        $kajian->gambar = "0";
-        // if ($request->hasFile('gambar')) {
-        //     $request->file('gambar')->move('gambar/', $request->file('gambar')->getClientOriginalName());
-        //     $kajian->gambar = $request->file('gambar')->getClientOriginalName();
-
-        //     return redirect()->route('kajianislami')->with('info', 'Kajian Islami telah bertambah');
-        // }
+        $kajian->no_hp = $request->no_hp;
+        $kajian->jeniskajian = $request->jeniskajian;
+        $kajian->gambar = $request->gambar;
         $kajian->save();
 
         return redirect()->route('kajianislami')->with('info', 'Kajian Islami berhasil ditambahkan');

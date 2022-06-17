@@ -20,6 +20,13 @@ class SaranController extends Controller
 
         Saran::create($request->all());
 
-        return redirect()->route('saran')->with('info', 'Saran telah dimasukkan');
+        return redirect()->route('saran')->with('info', 'Saran / Masukkan kamu telah terkirim');
+    }
+
+    public function show()
+    {
+        $saran = Saran::all()->sortDesc();
+
+        return view('dashboard.saran.index', compact('saran'));
     }
 }

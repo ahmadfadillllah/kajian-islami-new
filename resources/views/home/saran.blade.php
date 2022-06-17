@@ -33,11 +33,11 @@
                <div class="row">
                   <div class="col-xxl-12">
                      <div class="page__title-wrapper text-center">
-                        <h3>Contact </h3>
+                        <h3 style="color: black">Saran / Masukan </h3>
                            <nav aria-label="breadcrumb">
                               <ol class="breadcrumb justify-content-center">
-                                 <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                                 <li class="breadcrumb-item active" aria-current="page">Contact</li>
+                                 <li class="breadcrumb-item"><a href="/" style="color: black">Home</a></li>
+                                 <li class="breadcrumb-item active" aria-current="page" style="color: black">Saran / Masukan</li>
                               </ol>
                            </nav>
                      </div>
@@ -95,7 +95,7 @@
                                      <input type="email" name="email" placeholder="Email" required>
                                      <input type="subject" name="subject" placeholder="Subject" required>
                                      <textarea placeholder="Message" name="message" required></textarea>
-                                     <button type="submit" class="w-btn w-btn-blue-5 w-btn-6 w-btn-14">Send Massage</button>
+                                     <button type="submit" class="w-btn w-btn-blue-5 w-btn-6 w-btn-14">Kirimkan Pesan</button>
                                   </form>
                                </div>
                             </div>

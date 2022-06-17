@@ -39,7 +39,7 @@
             </li>
             @if (auth()->user()->role == 'admin')
             <li class=" nav-item">
-                <a class="d-flex align-items-center" href="{{ route('kajianislami') }}"><i data-feather="users"></i><span class="menu-title text-truncate" data-i18n="Kajian">Kajian</span></a>
+                <a class="d-flex align-items-center" href="{{ route('kajianislami') }}"><i data-feather="users"></i><span class="menu-title text-truncate" data-i18n="Kajian">Daftar Kajian</span></a>
             </li>
             <li class="nav-item">
                 <a class="d-flex align-items-center" href="{{ route('kajian-islami-tambah-rute') }}"><i data-feather="map"></i><span class="menu-title text-truncate" data-i18n="Tambah Lintasan">Tambah Lintasan</span></a>
@@ -53,6 +53,13 @@
                     </li>
                 </ul>
             </li>
+            <li class=" navigation-header"><span data-i18n="Apps &amp; Pages">Extra</span><i data-feather="more-horizontal"></i>
+            </li>
+            @if (auth()->user()->role == 'admin')
+            <li class=" nav-item">
+                <a class="d-flex align-items-center" href="{{ route('saran.index') }}"><i data-feather="file"></i><span class="menu-title text-truncate" data-i18n="Kajian">Saran dan Masukan</span></a>
+            </li>
+            @endif
             <li class=" navigation-header"><span data-i18n="Apps &amp; Pages">Users</span><i data-feather="more-horizontal"></i>
             </li>
             <li class=" nav-item">

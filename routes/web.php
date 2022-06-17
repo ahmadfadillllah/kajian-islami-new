@@ -4,7 +4,9 @@ use App\Http\Controllers\AStarController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FloydWarshallController;
+use App\Http\Controllers\ImportKajianController;
 use App\Http\Controllers\KajianIslamiController;
+use App\Http\Controllers\KontribusiController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SaranController;
 use App\Http\Controllers\TestingController;
@@ -29,6 +31,9 @@ Route::get('/', function () {
 Route::get('/about', function () {
     return view('home.about');
 });
+
+//Kontribusi
+Route::get('/kontribusi', [KontribusiController::class, 'index'])->name('kontribusi');
 
 Route::get('/saran', [SaranController::class, 'index'])->name('saran');
 Route::post('/saran-post', [SaranController::class, 'post'])->name('saran-post');
@@ -67,8 +72,14 @@ Route::group(['middleware' => ['auth', 'checkRole:admin']], function(){
     Route::get('/dashboard/list-pengguna', [UserController::class, 'index'])->name('user.index');
     Route::get('/dashboard/list-pengguna/destroy/{id}', [UserController::class, 'destroy'])->name('user.destroy');
 
+//Saran dan Masukan
+    Route::get('/dashboard/saran', [SaranController::class, 'show'])->name('saran.index');
+
 //Profile
     Route::get('/dashboard/profile', [ProfileController::class, 'index'])->name('profile.index');
+
+//Import Kajian
+    Route::post('/dashboard/kajian-islami/import', [ImportKajianController::class, 'index'])->name('importkajian.index');
 });
 
 Route::group(['middleware' => ['auth', 'checkRole:admin,masyarakatumum']], function(){

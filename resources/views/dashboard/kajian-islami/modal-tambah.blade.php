@@ -9,7 +9,36 @@
                         <form action="{{ route('kajianislami.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="mb-3">
-                                <label for="message-text" class="col-form-label">Judul <span
+                                <label for="recipient-name" class="col-form-label">Nama Masjid<span
+                                        style="color: red">*</span></label>
+                                <input type="text" class="form-control" name="namamasjid" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="recipient-name" class="col-form-label">Nama Pengurus / Pemateri<span
+                                        style="color: red">*</span></label>
+                                <input type="text" class="form-control" name="namapengurusmasjid" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="recipient-name" class="col-form-label">No. Handphone yang bisa dihubungi<span
+                                        style="color: red">*</span></label>
+                                <input type="text" class="form-control" name="no_hp" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message-text" class="col-form-label">Jenis Kajian <span
+                                        style="color: red">*</span></label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="jeniskajian">
+                                    <label class="form-check-label">Umum (Terbuka untuk siapapun)
+                                </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="jeniskajian" checked>
+                                    <label class="form-check-label">Khusus (Hanya pengurus / orang tertentu yang dapat mengikuti)
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                            <label for="message-text" class="col-form-label">Materi dan Waktu Kajian<span
                                         style="color: red">*</span></label>
                                 <textarea class="form-control" name="materidanwaktukajian" placeholder="Contoh :
                                 Ceramah Harian (08.00 - 09.00 WITA),
@@ -17,45 +46,16 @@
                                 Pengkajian Alhadist (10.00 - 10.30 WITA) " required></textarea>
                             </div>
                             <div class="mb-3">
-                                <label for="message-text" class="col-form-label">Waktu <span
+                                <label for="message-text" class="col-form-label">Alamat<span
                                         style="color: red">*</span></label>
                                 <textarea class="form-control" name="alamat" required></textarea>
                             </div>
                             <div class="mb-3">
-                                <label for="recipient-name" class="col-form-label">Tempat <span
+                                <label for="recipient-name" class="col-form-label">Gambar Masjid<span
                                         style="color: red">*</span></label>
-                                <input type="text" class="form-control" name="namamasjid" required>
+                                        <p>Masukkan link gambar</p>
+                                <input type="text" class="form-control" name="gambar" required>
                             </div>
-                            <div class="mb-3">
-                                <label for="recipient-name" class="col-form-label">Pemateri <span
-                                        style="color: red">*</span></label>
-                                <input type="text" class="form-control" name="namapengurusmasjid" required>
-                            </div>
-                            {{-- <div class="mb-3"> --}}
-                            {{--     <label for="recipient-name" class="col-form-label">No. Handphone Pengurus Masjid <span --}}
-                            {{--             style="color: red">*</span></label> --}}
-                            {{--     <input type="text" class="form-control" name="no_hp" required> --}}
-                            {{-- </div> --}}
-                            {{-- <div class="mb-3"> --}}
-                            {{--     <label for="message-text" class="col-form-label">Jenis Kajian <span --}}
-                            {{--             style="color: red">*</span></label> --}}
-                            {{--     <div class="form-check"> --}}
-                            {{--         <input class="form-check-input" type="radio" name="jeniskajian"> --}}
-                            {{--         <label class="form-check-label">Umum (Terbuka untuk siapapun) --}}
-                            {{--         </label> --}}
-                            {{--     </div> --}}
-                            {{--     <div class="form-check"> --}}
-                            {{--         <input class="form-check-input" type="radio" name="jeniskajian" checked> --}}
-                            {{--         <label class="form-check-label">Khusus (Hanya pengurus / orang tertentu yang dapat --}}
-                            {{--             mengikuti) --}}
-                            {{--         </label> --}}
-                            {{--     </div> --}}
-                            {{-- </div> --}}
-                            {{-- <div class="mb-3"> --}}
-                            {{--     <label for="recipient-name" class="col-form-label">Gambar Masjid <span --}}
-                            {{--             style="color: red">*</span></label> --}}
-                            {{--     <input type="file" class="form-control" name="gambar" required> --}}
-                            {{-- </div> --}}
                             <div class="mb-3">
                                 <label for="recipient-name" class="col-form-label">Titik Koordinat <span
                                         style="color: red">*</span></label>

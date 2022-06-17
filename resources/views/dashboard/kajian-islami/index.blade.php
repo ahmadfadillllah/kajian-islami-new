@@ -26,16 +26,30 @@
             <div class="content-header-right text-md-end col-md-3 col-12 d-md-block d-none">
                 <div class="mb-1 breadcrumb-right">
                     <div class="dropdown">
-                        <button class="btn-icon btn btn-primary btn-round btn-sm dropdown-toggle" type="button"
-                            aria-haspopup="true" aria-expanded="false" data-bs-toggle="modal"
-                            data-bs-target="#tambahkajian"><i data-feather="plus"></i></button>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <button class="btn-icon btn btn-success btn-round btn-sm dropdown-toggle" type="button"
+                                aria-haspopup="true" aria-expanded="false" data-bs-toggle="modal"
+                                data-bs-target="#importkajian">Import Kajian
+                            </button>
+
+                            </div>
+                            <div class="col-md-6">
+                                <button class="btn-icon btn btn-primary btn-round btn-sm dropdown-toggle" type="button"
+                                aria-haspopup="true" aria-expanded="false" data-bs-toggle="modal"
+                                data-bs-target="#tambahkajian"><i data-feather="plus"></i>
+                            </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+
         </div>
 
         <!-- Modal Tambah Kajian -->
         @include ("dashboard.kajian-islami.modal-tambah")
+        @include ("dashboard.kajian-islami.import")
         <div class="content-body">
             @if (session('info'))
             <div class="alert alert-success p-3" role="alert">
@@ -85,20 +99,24 @@
                                                     </thead>
                                                     <tbody>
                                                         <tr>
-                                                            <td>Judul</td>
-                                                            <td>{{ $item->materidanwaktukajian }}</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Waktu</td>
-                                                            <td>{{ $item->alamat }}</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Tempat</td>
+                                                            <td>Nama Masjid</td>
                                                             <td>{{ $item->namamasjid }}</td>
                                                         </tr>
                                                         <tr>
-                                                            <td>Pemateri</td>
+                                                            <td>Nama Pengurus / Pemateri</td>
                                                             <td>{{ $item->namapengurusmasjid }}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>No. Handphone</td>
+                                                            <td>{{ $item->no_hp }}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Jenis Kajian</td>
+                                                            <td>{{ $item->jeniskajian }}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Materi dan Waktu Kajian</td>
+                                                            <td>{{ $item->materidanwaktukajian }}</td>
                                                         </tr>
                                                         <tr>
                                                             <td>Jumlah Rute</td>

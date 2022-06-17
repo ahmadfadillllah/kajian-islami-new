@@ -22,6 +22,16 @@
       <link rel="stylesheet" href="{{ asset('wetland') }}/assets/css/elegantFont.css">
       <link rel="stylesheet" href="{{ asset('wetland') }}/assets/css/default.css">
       <link rel="stylesheet" href="{{ asset('wetland') }}/assets/css/style.css">
+
+      {{-- Leaflet JS --}}
+<script
+src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+crossorigin="">
+</script>
+<script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+
+<script src="{{ asset('geo-location-javascript/js/geo-min.js') }}"></script>
    </head>
    <body>
       <!--[if lte IE 9]>

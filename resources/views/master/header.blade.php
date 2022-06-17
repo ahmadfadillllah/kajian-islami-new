@@ -15,7 +15,7 @@
                             <ul>
                                 <li><a href="/">Home</a></li>
                                 <li><a href="/about">About Us</a></li>
-                                {{--                         <li><a href="/saran">Saran</a></li>--}}
+                                <li><a href="/saran">Saran / Masukan</a></li>
                             </ul>
                         </nav>
                     </div>

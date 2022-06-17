@@ -36,7 +36,7 @@ module.exports = helpers;
 
 
 
-// A* Search for nodejs based on 
+// A* Search for nodejs based on
 // http://www.briangrinstead.com/blog/astar-search-algorithm-in-javascript
 
 const Node = __webpack_require__(/*! ./node.js */ "./node_modules/node-astar/lib/node.js");
@@ -49,7 +49,7 @@ function Astar (neighboursFunction) {
   this.nodeStart = null;
   this.nodeEnd = null;
   this.callback = null;
-  
+
   this.lastBestNode = null;
 
   this.neighboursFunction = neighboursFunction;
@@ -70,7 +70,7 @@ Astar.prototype.search = function (start, end, cb) {
   // find last node
   var self = this;
   this.nodeStart.closed = true;
-  this.lastBestNode = this.nodeStart;    
+  this.lastBestNode = this.nodeStart;
   this.allNodes[this.nodeStart.id] = this.nodeStart;
   findNeighbours(this, this.nodeStart);
 };
@@ -85,12 +85,12 @@ Astar.prototype.continueSearch = function () {
 
     // choose best node
     this.lastBestNode = this.allNodes[this.openNodes[0]];
-      
+
     for(var i=1; i < this.openNodes.length; i++) {
       var n = this.allNodes[this.openNodes[i]];
 
-      if(n.f < this.lastBestNode.f) { 
-        this.lastBestNode = n; 
+      if(n.f < this.lastBestNode.f) {
+        this.lastBestNode = n;
       }
     }
 
@@ -105,7 +105,7 @@ Astar.prototype.continueSearch = function () {
         bestNode = this.allNodes[bestNode.parent];
       }
 
-      // return result                
+      // return result
       if (this.callback) {
         return this.callback (undefined, ret.reverse());
       }
@@ -133,7 +133,7 @@ Astar.prototype.continueSearch = function () {
 Astar.prototype.processNewNodes = function (neighborsIds) {
 
   if (!neighborsIds) {
-    return; 
+    return;
   }
 
   for(var i = 0; i < neighborsIds.length; i++) {
@@ -193,7 +193,7 @@ const add = function (self, nodes) {
   }
 
   var myneighbors = [];
-  
+
   // for each node (except first)
   for(var i=0; i < nodes.length; i++) {
 
@@ -209,10 +209,10 @@ const add = function (self, nodes) {
       myneighbors.push(n.id);
     }
   }
-  
+
   self.processNewNodes(myneighbors);
 
-  self.continueSearch();        
+  self.continueSearch();
 };
 
 
@@ -251,8 +251,8 @@ function Node(id, latitude, longitude) {
 
 /**
  * Euclidean distance between two points
- * 
- * @param node {Node} 
+ *
+ * @param node {Node}
  *
  * return {Double}
  */
@@ -271,7 +271,7 @@ module.exports = Node
 /************************************************************************/
 /******/ 	// The module cache
 /******/ 	var __webpack_module_cache__ = {};
-/******/ 	
+/******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
 /******/ 		// Check if module is in cache
@@ -285,14 +285,14 @@ module.exports = Node
 /******/ 			// no module.loaded needed
 /******/ 			exports: {}
 /******/ 		};
-/******/ 	
+/******/
 /******/ 		// Execute the module function
 /******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
-/******/ 	
+/******/
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
-/******/ 	
+/******/
 /************************************************************************/
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
@@ -403,7 +403,7 @@ window.showMosque = function (params) {
       var txtNameMosque = element.namamasjid;
       var txtAddressMosque = element.alamat;
       var txtTypeMosque = element.jeniskajian;
-      var urlImage = element.image_url; //    custome icon markers
+      var urlImage = element.gambar; //    custome icon markers
 
       var mosqueIcon = new L.Icon({
         iconSize: [27, 27],
