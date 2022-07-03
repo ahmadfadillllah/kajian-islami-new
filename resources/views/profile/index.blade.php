@@ -44,6 +44,66 @@
                                 </div>
                             </div>
 
+
+                            @if (session('info'))
+                            <script>
+                                Swal.fire(
+                                'Information',
+                                '{{ session('info') }}',
+                                'info'
+                                )
+                            </script>
+                            @endif
+
+                            <!-- add new card modal  -->
+                <div class="modal fade" id="addNewCard" tabindex="-1" aria-labelledby="addNewCardTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header bg-transparent">
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body px-sm-5 mx-50 pb-5">
+                                <h1 class="text-center mb-1" id="addNewCardTitle">Ganti Password</h1>
+                                <p class="text-center">Jangan lupa untuk mengingat password anda</p>
+
+                                <!-- form -->
+                                <form class="row gy-1 gx-2 mt-75" action="{{ route('profile.update') }}" method="POST">
+                                    @csrf
+                                    <div class="col-12">
+                                        <label class="form-label" for="modalAddCardNumber">Password lama</label>
+                                        <div class="input-group input-group-merge">
+                                            <input name="password_lama" class="form-control add-credit-card-mask" type="password" placeholder="Masukkan password lama" aria-describedby="modalAddCard2" data-msg="Masukkan password lama" />
+                                            <span class="input-group-text cursor-pointer p-25" id="modalAddCard2">
+                                                <span class="add-card-type"></span>
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <label class="form-label" for="modalAddCardNumber">Password baru</label>
+                                        <div class="input-group input-group-merge">
+                                            <input name="password_baru" class="form-control add-credit-card-mask" type="password" placeholder="Masukkan password baru" aria-describedby="modalAddCard2" data-msg="Masukkan password baru" />
+                                            <span class="input-group-text cursor-pointer p-25" id="modalAddCard2">
+                                                <span class="add-card-type"></span>
+                                            </span>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="col-12 text-center">
+                                        <button type="submit" class="btn btn-primary me-1 mt-1">Submit</button>
+                                        <button type="reset" class="btn btn-outline-secondary mt-1" data-bs-dismiss="modal" aria-label="Close">
+                                            Cancel
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--/ add new card modal  -->
+
                             <!-- tabs pill -->
                             <div class="profile-header-nav">
                                 <!-- navbar -->
@@ -56,9 +116,8 @@
                                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                         <div class="profile-tabs d-flex justify-content-between flex-wrap m-4">
                                             <!-- edit button -->
-                                            <button class="btn btn-primary">
-                                                <i data-feather="edit" class="d-block d-md-none"></i>
-                                                <span class="fw-bold d-none d-md-block">Edit</span>
+                                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addNewCard">
+                                                Ganti Password
                                             </button>
                                         </div>
                                     </div>

@@ -11,4 +11,9 @@ class KontribusiController extends Controller
     {
         return view('home.kontribusi');
     }
+
+    public function post(Request $request)
+    {
+        dd($request->all());
+    }
 }

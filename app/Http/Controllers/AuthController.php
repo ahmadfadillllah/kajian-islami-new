@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\SendPassword;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class AuthController extends Controller
 {
@@ -29,10 +31,15 @@ class AuthController extends Controller
         }
     }
 
-    public function logout()
+    public function logout(Request $request)
     {
         Auth::logout();
-        return redirect()->route('login');
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect()->route('login')->with('info', 'Anda telah logout');
     }
 
 
@@ -55,6 +62,11 @@ class AuthController extends Controller
         $user->role = 'masyarakatumum';
         $user->password = Hash::make($request->input("password"));
         $user->save();
-        return redirect()->back()->with('success', 'Berhasil daftar, silahkan login');
+        return redirect()->route('login')->with('success', 'Berhasil daftar, silahkan login');
+    }
+
+    public function forgotpassword()
+    {
+        return view('auth.forgot-password');
     }
 }

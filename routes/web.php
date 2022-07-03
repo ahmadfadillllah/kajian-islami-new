@@ -6,12 +6,16 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FloydWarshallController;
 use App\Http\Controllers\ImportKajianController;
 use App\Http\Controllers\KajianIslamiController;
-use App\Http\Controllers\KontribusiController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SaranController;
 use App\Http\Controllers\TestingController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
+use Illuminate\Auth\Events\PasswordReset;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Password;
+use Illuminate\Support\Str;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,7 +37,8 @@ Route::get('/about', function () {
 });
 
 //Kontribusi
-Route::get('/kontribusi', [KontribusiController::class, 'index'])->name('kontribusi');
+// Route::get('/kontribusi', [KontribusiController::class, 'index'])->name('kontribusi');
+// Route::post('/kontribusi', [KontribusiController::class, 'post'])->name('kontribusi.post');
 
 Route::get('/saran', [SaranController::class, 'index'])->name('saran');
 Route::post('/saran-post', [SaranController::class, 'post'])->name('saran-post');
@@ -45,6 +50,50 @@ Route::get("/logout", [AuthController::class, 'logout'])->name("logout");
 
 
 Route::get('/register', [AuthController::class, 'register'])->name('register');
+
+Route::get('/forgot-password', [AuthController::class, 'forgotpassword'])->name('forgot-password');
+
+Route::post('/forgot-password', function (Request $request) {
+    $request->validate(['email' => 'required|email']);
+
+    $status = Password::sendResetLink(
+        $request->only('email')
+    );
+
+    return $status === Password::RESET_LINK_SENT
+                ? back()->with(['info' => __($status)])
+                : back()->withErrors(['email' => __($status)]);
+})->middleware('guest')->name('password.email');
+
+Route::get('/reset-password/{token}', function ($token) {
+    return view('auth.reset-password', ['token' => $token]);
+})->middleware('guest')->name('password.reset');
+
+Route::post('/reset-password', function (Request $request) {
+    $request->validate([
+        'token' => 'required',
+        'email' => 'required|email',
+        'password' => 'required|min:8|confirmed',
+    ]);
+
+    $status = Password::reset(
+        $request->only('email', 'password', 'password_confirmation', 'token'),
+        function ($user, $password) {
+            $user->forceFill([
+                'password' => Hash::make($password)
+            ])->setRememberToken(Str::random(60));
+
+            $user->save();
+
+            event(new PasswordReset($user));
+        }
+    );
+
+    return $status === Password::PASSWORD_RESET
+                ? redirect()->route('login')->with('info', __($status))
+                : back()->withErrors(['email' => [__($status)]]);
+})->middleware('guest')->name('password.update');
+
 
 Route::group(['middleware' => ['auth', 'checkRole:admin']], function(){
 
@@ -100,6 +149,7 @@ Route::group(['middleware' => ['auth', 'checkRole:admin,masyarakatumum']], funct
 
 //Profile
     Route::get('/dashboard/profile', [ProfileController::class, 'index'])->name('profile.index');
+    Route::post('/dashboard/profile/update', [ProfileController::class, 'update'])->name('profile.update');
 });
 
 

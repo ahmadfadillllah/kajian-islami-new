@@ -56,7 +56,7 @@
                                             {{ csrf_field() }}
                                             <div class="col-sm-9">
                                                 <div class="mb-1">
-                                                    <label class="col-form-label">Pilih Rute</label>
+                                                    <label class="col-form-label">Pilih Lintasan</label>
                                                     <div id="mapid"></div>
                                                 </div>
                                             </div>
@@ -66,7 +66,7 @@
                                                     <select class="form-control" name="kajian_islami_id" id="kajian_islami_id"
                                                            >
                                                            <option value="{{ $kajian_islami ? $kajian_islami->id : '' }}"> -- {{ $kajian_islami ? $kajian_islami->namamasjid : '' }} -- </option>
-                                                           @foreach ($kajian_islamis as $kajian_islami) 
+                                                           @foreach ($kajian_islamis as $kajian_islami)
                                                            <option value="{{ $kajian_islami->id }}">{{ $kajian_islami->namamasjid }}</option>
                                                            @endforeach
                                                     </select>
@@ -74,7 +74,7 @@
                                                 <div class="mb-1">
                                                     <label class="col-form-label">Keterangan</label>
                                                     <textarea name="keterangan" class="form-control"
-                                                              placeholder="Keterangan"></textarea>
+                                                              placeholder="Keterangan" required></textarea>
                                                 </div>
                                                 <textarea name="rute" id="rute" style="display: none"></textarea>
                                                 <div class="mb-1">

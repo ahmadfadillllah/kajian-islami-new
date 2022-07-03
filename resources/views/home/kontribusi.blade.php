@@ -19,80 +19,88 @@
 
 <main>
 
-   <!-- page title area start -->
-   <section class="page__title-area page__title-height d-flex align-items-center fix p-relative z-index-1" data-background="assets/img/page-title/page-title.jpg">
-      <div class="page__title-shape">
-         <img class="page-title-dot-4" src="assets/img/page-title/dot-4.png" alt="">
-         <img class="page-title-dot" src="assets/img/page-title/dot.png" alt="">
-         <img class="page-title-dot-2" src="assets/img/page-title/dot-2.png" alt="">
-         <img class="page-title-dot-3" src="assets/img/page-title/dot-3.png" alt="">
-         <img class="page-title-plus" src="assets/img/page-title/plus.png" alt="">
-         <img class="page-title-triangle" src="assets/img/page-title/triangle.png" alt="">
-      </div>
-      <div class="container">
-         <div class="row">
-            <div class="col-xxl-12">
-               <div class="page__title-wrapper text-center">
-                  <h3 style="color: black">Mari Berkontribusi</h3>
-                     <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb justify-content-center">
-                           <li class="breadcrumb-item"><a href="/" style="color: black">Home</a></li>
-                           <li class="breadcrumb-item active" aria-current="page" style="color: black">Kontribusi</li>
-                        </ol>
-                     </nav>
-               </div>
+    <!-- page title area start -->
+    <section class="page__title-area page__title-height d-flex align-items-center fix p-relative z-index-1"
+        data-background="assets/img/page-title/page-title.jpg">
+        <div class="page__title-shape">
+            <img class="page-title-dot-4" src="assets/img/page-title/dot-4.png" alt="">
+            <img class="page-title-dot" src="assets/img/page-title/dot.png" alt="">
+            <img class="page-title-dot-2" src="assets/img/page-title/dot-2.png" alt="">
+            <img class="page-title-dot-3" src="assets/img/page-title/dot-3.png" alt="">
+            <img class="page-title-plus" src="assets/img/page-title/plus.png" alt="">
+            <img class="page-title-triangle" src="assets/img/page-title/triangle.png" alt="">
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xxl-12">
+                    <div class="page__title-wrapper text-center">
+                        <h3 style="color: black">Mari Berkontribusi</h3>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb justify-content-center">
+                                <li class="breadcrumb-item"><a href="/" style="color: black">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page" style="color: black">Kontribusi
+                                </li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
             </div>
-         </div>
-      </div>
-   </section>
-   <!-- page title area end -->
+        </div>
+    </section>
+    <!-- page title area end -->
 
     <!-- contact area start  -->
     <section class="contact__area pb-150 p-relative z-index-1">
         <div class="container">
             <div class="row">
                 <div class="col-xxl-10 offset-xxl-1 col-xl-10 offset-xl-1 col-lg-10 offset-lg-1">
-                    <div class="contact__wrapper white-bg mt--70 p-relative z-index-1 wow fadeInUp" data-wow-delay=".3s">
+                    <div class="contact__wrapper white-bg mt--70 p-relative z-index-1 wow fadeInUp"
+                        data-wow-delay=".3s">
 
-                      @if (session('info'))
+                        @if (session('info'))
 
-                      <div class="alert alert-success alert-dismissible fade show" role="alert">
-                        <strong>Terimakasih!</strong> {{ session('info') }}
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                      </div>
-
-                      @endif
-
-                   <div class="row">
-                    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
-                        <div class="contact__form">
-                              <input type="text" name="namamasjid" placeholder="Nama Masjid" required>
-                              <input type="text" name="namapengurusmasjid" placeholder="Nama Pengurus / Pemateri" required>
-                              <input type="text" name="no_hp" placeholder="No. Handphone" required>
-                              <input type="text" name="jeniskajian" placeholder="Jenis Kajian (Umum / Khusus)" required>
-                              <textarea name="materidanwaktukajian" placeholder="Materi dan Waktu Kajian"  required></textarea>
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <strong>Terimakasih!</strong> {{ session('info') }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                         </div>
-                     </div>
-                      <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
-                         <div class="contact__form">
-                               <textarea name="alamat" placeholder="Alamat" required></textarea>
-                               <input type="text" name="gambar" placeholder="Gambar Masjid (Link)" required>
-                               <input type="text" id="latlong" name="latlong" placeholder="Titik Koordinat" required readonly>
-                               <a onclick="getlokasi('mapid')" class="w-btn w-btn-blue-5 w-btn-6 w-btn-14">Tampilkan Lokasi</a>
-                                <p id="capa"></p>
-                                <div class="row">
-                                    <div class="col md-6">
-                                        <div id="mapid" height="200px"></div>
+
+                        @endif
+                        <form action="{{ route('kontribusi.post') }}" method="post">
+                        @csrf
+                        <div class="row">
+                            <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
+                                <div class="contact__form">
+                                    <input type="text" name="namamasjid" placeholder="Nama Masjid" required>
+                                    <input type="text" name="namapengurusmasjid" placeholder="Nama Pengurus / Pemateri"
+                                        required>
+                                    <input type="text" name="no_hp" placeholder="No. Handphone" required>
+                                    <input type="text" name="jeniskajian" placeholder="Jenis Kajian (Umum / Khusus)"
+                                        required>
+                                    <textarea name="materidanwaktukajian" placeholder="Materi dan Waktu Kajian"
+                                        required></textarea>
+                                </div>
+                            </div>
+                            <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
+                                <div class="contact__form">
+                                    <textarea name="alamat" placeholder="Alamat" required></textarea>
+                                    <input type="text" name="gambar" placeholder="Gambar Masjid (Link)" required>
+                                    <input type="text" id="latlong" name="latlong" placeholder="Titik Koordinat"
+                                        required readonly>
+                                    <a onclick="getlokasi('mapid')"
+                                        class="w-btn w-btn-blue-5 w-btn-6 w-btn-14">Tampilkan Lokasi</a>
+                                    <p id="capa"></p>
+                                    <div class="google-maps">
+                                        <div id="mapid"></div>
                                     </div>
-                                   </div>
-                               <button type="submit" class="w-btn w-btn-blue-5 w-btn-6 w-btn-14">Kirim</button>
-                         </div>
-                      </div>
-                   </div>
+                                    <button type="submit" class="w-btn w-btn-blue-5 w-btn-6 w-btn-14">Kirim</button>
+                                </div>
+                            </div>
+                        </div>
+                        </form>
+                    </div>
                 </div>
-             </div>
-          </div>
-       </div>
+            </div>
+        </div>
     </section>
     <!-- contact area end  -->
 </main>
@@ -100,6 +108,7 @@
 <script>
     var marker_pilih_lokasi;
     var MAPID;
+
     function getlokasi(mapid) {
         MAPID = mapid;
         //jika browser mendukung navigator.geolocation maka akan menjalankan perintah di bawahnya
@@ -169,4 +178,3 @@
 
 <!-- JS here -->
 @include('master.bottom')
-

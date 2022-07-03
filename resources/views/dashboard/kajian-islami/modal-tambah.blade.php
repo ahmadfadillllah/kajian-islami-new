@@ -27,12 +27,12 @@
                                 <label for="message-text" class="col-form-label">Jenis Kajian <span
                                         style="color: red">*</span></label>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="jeniskajian">
+                                    <input class="form-check-input" type="radio" name="jeniskajian" value="Umum (Terbuka untuk siapapun)">
                                     <label class="form-check-label">Umum (Terbuka untuk siapapun)
                                 </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="jeniskajian" checked>
+                                    <input class="form-check-input" type="radio" name="jeniskajian" value="Khusus (Hanya pengurus / orang tertentu yang dapat mengikuti)" checked>
                                     <label class="form-check-label">Khusus (Hanya pengurus / orang tertentu yang dapat mengikuti)
                                     </label>
                                 </div>

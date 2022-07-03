@@ -1,3 +1,13 @@
+            {{-- Leaflet JS --}}
+<script
+src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+crossorigin="">
+</script>
+<script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+
+<script src="{{ asset('geo-location-javascript/js/geo-min.js') }}"></script>
+   </body>
       <script src="{{ asset('wetland') }}/assets/js/vendor/jquery-3.5.1.min.js"></script>
       <script src="{{ asset('wetland') }}/assets/js/vendor/waypoints.min.js"></script>
       <script src="{{ asset('wetland') }}/assets/js/bootstrap.bundle.min.js"></script>
@@ -12,7 +22,7 @@
       <script src="{{ asset('wetland') }}/assets/js/wow.min.js"></script>
       <script src="{{ asset('wetland') }}/assets/js/imagesloaded.pkgd.min.js"></script>
       <script src="{{ asset('wetland') }}/assets/js/main.js"></script>
-   </body>
+
 
 <!-- Mirrored from themepure.net/template/wetland-prev/wetland/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 06 Mar 2022 11:15:18 GMT -->
 </html>

@@ -14,7 +14,7 @@ const createControl = (data) => {
     let tujuan = RUTE_TUJUAN.latLong();
     var control = L.Routing.control({
         waypoints: [
-            L.latLng(-1.616729, 103.623597),
+            L.latLng(-5.1358021, 119.4500122),
             L.latLng(tujuan.latitude, tujuan.longitude)
         ],
         routeWhileDragging: true,

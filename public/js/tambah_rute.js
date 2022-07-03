@@ -1,10 +1,8 @@
-/******/ (() => { // webpackBootstrap
-/******/ 	var __webpack_modules__ = ({
+(() => { // webpackBootstrap
+var __webpack_modules__ = ({
 
-/***/ "./resources/js/helpers.js":
-/*!*********************************!*\
-  !*** ./resources/js/helpers.js ***!
-  \*********************************/
+"./resources/js/helpers.js":
+
 /***/ ((module) => {
 
 var helpers = {
@@ -73,7 +71,7 @@ L.popup();
 var createControl = function createControl(data) {
   var tujuan = RUTE_TUJUAN.latLong();
   var control = L.Routing.control({
-    waypoints: [L.latLng(-5.1373588, 119.4455718), L.latLng(tujuan.latitude, tujuan.longitude)],
+    waypoints: [L.latLng(-5.170019, 119.4115272), L.latLng(tujuan.latitude, tujuan.longitude)],
     routeWhileDragging: true,
     lineOptions: {
       styles: [{
@@ -138,7 +136,7 @@ function showPosition(position) {
 
 
 function setMapGeo() {
-  mymap.setView([latitude, longitude], 13); //setting maps menggunakan api mapbox bukan google maps, daftar dan dapatkan token
+  mymap.setView([latitude, longitude], 13); //setting maps menggunakan api google maps, daftar dan dapatkan token
 
   L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYWhtYWRmYWRpbGxsbGFoIiwiYSI6ImNsMDdydXM3eDJrbm0zaGxzcXEyOTljbmUifQ.BChqppsKGxQnbG2vUDOoww", {
     maxZoom: 18,

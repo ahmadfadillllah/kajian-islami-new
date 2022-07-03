@@ -32,6 +32,21 @@ crossorigin="">
 <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
 
 <script src="{{ asset('geo-location-javascript/js/geo-min.js') }}"></script>
+<style>
+    .google-maps {
+        position: relative;
+        padding-bottom: 10%; // Kode ini aspek rasio dari tampilan
+        height: 0;
+        overflow: hidden;
+    }
+    .google-maps iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height: 100% !important;
+    }
+</style>
    </head>
    <body>
       <!--[if lte IE 9]>

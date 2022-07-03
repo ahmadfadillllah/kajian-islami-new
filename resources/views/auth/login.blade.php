@@ -39,7 +39,7 @@
                             @if (session('info'))
 
                             <div class="alert alert-info alert-dismissible fade show" role="alert">
-                              <strong>Upps!</strong> {{ session('info') }}
+                              <strong>Info!</strong> {{ session('info') }}
                               <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                             </div>
 
@@ -67,7 +67,7 @@
                                        </label>
                                  </div>
                                  <div class="sign__forgot">
-                                    <a href="#">Forgot your password?</a>
+                                    <a href="{{ route('forgot-password') }}">Lupa password?</a>
                                  </div>
                               </div>
                               <button class="w-btn w-btn-11 w-100"> <span></span> Sign In</button>

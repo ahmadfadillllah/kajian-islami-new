@@ -540,7 +540,7 @@ function showMosque(params) {
         $('#mosque_dest').val(txtNameMosque);
         $('#id_mosque').val(idMosque); // function callback when click action to show pop up
 
-        L.popup().setLatLng(e.latlng).setContent("<div class=\"card-group\">\n                    <div class=\"card\">\n                        <img class=\"card-img-top\" src=\"" + urlImage + "\" alt=\"Card image cap\">\n                        <div class=\"card-body\">\n                        <h5 class=\"card-title\">" + txtNameMosque + "</h5>\n                        <p class=\"text-secondary\">" + txtAddressMosque + "</p>\n                        <p class=\"card-text text-light\">" + txtTypeMosque + "</p>\n                        </div>\n                        <button onclick=\"showRoute('" + lat + "','" + _long + "', '" + idMosque + "')\" class=\"btn btn-primary btn-sm\">Tampilkan Rute</button>\n                    </div>").openOn(mymap);
+        L.popup().setLatLng(e.latlng).setContent("<div class=\"card-group\">\n                    <div class=\"card\">\n                        <img class=\"card-img-top\" src=\"" + urlImage + "\" alt=\"Card image cap\">\n                        <div class=\"card-body\">\n                        <h5 class=\"card-title\">" + txtNameMosque + "</h5>\n                        <p class=\"text-secondary\">" + txtAddressMosque + "</p>\n                        <p class=\"card-text text-light\">" + txtTypeMosque + "</p>\n                        </div>\n                        <button onclick=\"showRoute('" + lat + "','" + _long + "', '" + idMosque + "')\" class=\"btn btn-primary btn-sm\">Cari lintasan terpendek</button>\n                    </div>").openOn(mymap);
       });
     });
   })["catch"](function (error) {

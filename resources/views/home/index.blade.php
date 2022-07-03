@@ -25,14 +25,14 @@
                         <h2 class="hero__title wow fadeInUp" data-wow-delay=".3s">{{ env('APP_NAME') }}</h2>
                         <p class="wow fadeInUp" data-wow-delay=".5s">Aplikasi penentuan lokasi kajian islami di Kota
                             Makassar dengan lintasan terpendek.</p>
-                            <p>Ingin berkontribusi dalam penentuan Lokasi Kajian Masjid yang ada di Kota Makassar?</p>
+                            {{-- <p>Ingin berkontribusi dalam penentuan Lokasi Kajian Masjid yang ada di Kota Makassar?</p>
                                                <div class="hero__search wow fadeInUp" data-wow-delay=".7s">
                                                   <a href="{{ route('kontribusi') }}" class="w-btn w-btn-2">Ya, saya ingin berkontribusi!</a>
                                                   <div class="hero__search-info">
                                                      <span> <i class="fal fa-check"></i> Validasi Admin</span>
                                                      <span> <i class="fal fa-check"></i> Cek secara berkala</span>
                                                   </div>
-                                               </div>
+                                               </div> --}}
                     </div>
                 </div>
                 <div class="col-xxl-5 col-xl-6 col-lg-6">
