@@ -338,11 +338,23 @@ function getlokasi() {
 
 function showPosition(position) {
   // set vaue latitude longitude
+  var ketAkurasi;
   latitude = position.coords.latitude;
   longitude = position.coords.longitude;
   var accuracy = position.coords.accuracy;
   var capa = document.getElementById("capa");
-  capa.innerHTML = "Akurasi: " + accuracy; // call function set map
+  if(accuracy > 500)
+  {
+    ketAkurasi = "Rendah";
+  }else if(accuracy == 500)
+  {
+    ketAkurasi = "Sedang";
+  }
+  else if(accuracy < 500)
+  {
+    ketAkurasi = "Tinggi";
+  }
+  capa.innerHTML = "Akurasi: " + accuracy + " (" + ketAkurasi + ")"; // call function set map
 
   setMapGeo(); // buat fungsi popup saat map diklik
 
