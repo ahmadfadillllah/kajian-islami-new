@@ -433,7 +433,7 @@ var mymap = L.map("mapid");
 var marker = L.layerGroup().addTo(mymap);
 var routing = '';
 var popup = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution: '© OpenStreetMap contributors'
+  attribution: '© Kajian Islami'
 }).addTo(mymap);
 
 function getlokasi() {
@@ -453,7 +453,7 @@ function showPosition(position) {
   longitude = position.coords.longitude;
   var accuracy = position.coords.accuracy;
   var capa = document.getElementById("capa");
-  capa.innerHTML = "latitude: " + latitude + ", longitude: " + ", accuracy: " + accuracy; // call function set map
+  capa.innerHTML = "Akurasi: " + accuracy; // call function set map
 
   setMapGeo(); // buat fungsi popup saat map diklik
 
