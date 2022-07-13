@@ -43,7 +43,7 @@ class AuthController extends Controller
 
         return back()->withErrors([
             'email' => 'The provided credentials do not match our records.',
-        ])->onlyInput('email');
+        ])->onlyInput('email')->with('info', 'Email / Password Salah');
     }
 
     public function logout(Request $request)
@@ -77,7 +77,7 @@ class AuthController extends Controller
         $user->role = 'masyarakatumum';
         $user->password = Hash::make($request->input("password"));
         $user->save();
-        return redirect()->route('login')->with('success', 'Berhasil daftar, silahkan login');
+        return redirect()->route('login')->with('info', 'Berhasil daftar, silahkan login');
     }
 
     public function forgotpassword()

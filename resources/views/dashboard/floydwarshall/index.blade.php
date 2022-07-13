@@ -27,26 +27,6 @@
                     </div>
                 </div>
             </div>
-            <div class="content-header-right text-md-end col-md-3 col-12 d-md-block d-none">
-                <div class="mb-1 breadcrumb-right">
-                    <div class="dropdown">
-                        <button class="btn-icon btn btn-primary btn-round btn-sm dropdown-toggle" type="button"
-                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
-                                data-feather="grid"></i></button>
-                        <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="app-todo.html"><i
-                                    class="me-1" data-feather="check-square"></i><span
-                                    class="align-middle">Todo</span></a><a class="dropdown-item" href="app-chat.html"><i
-                                    class="me-1" data-feather="message-square"></i><span
-                                    class="align-middle">Chat</span></a><a class="dropdown-item"
-                                                                           href="app-email.html"><i class="me-1"
-                                                                                                    data-feather="mail"></i><span
-                                    class="align-middle">Email</span></a><a class="dropdown-item"
-                                                                            href="app-calendar.html"><i class="me-1"
-                                                                                                        data-feather="calendar"></i><span
-                                    class="align-middle">Calendar</span></a></div>
-                    </div>
-                </div>
-            </div>
         </div>
         <div class="content-body">
 
@@ -78,8 +58,10 @@
                                     Terdekat
                                 </button> --}}
                                 <div class="demo-inline-spacing">
-                                    <button id="show_mosque_all" class="btn btn-primary">Tampilkan Kajian Islami</button>
-                                    <button onclick="showMosque('close-in')" class="btn btn-dark">Tampilkan Kajian Terdekat</button>
+                                    <button id="show_mosque_all" class="btn btn-primary">Tampilkan Kajian
+                                        Islami</button>
+                                    <button onclick="showMosque('close-in')" class="btn btn-dark">Tampilkan Kajian
+                                        Terdekat</button>
                                 </div>
                             </div>
                         </div>
@@ -167,7 +149,7 @@
 
 @include('dashboard.master.footer')
 <script src="https://code.jquery.com/jquery-3.6.0.slim.js"
-        integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+    integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
 <script src="{{ asset('axios.min.js') }}"></script>
 <script src="{{ asset('js/leaflet.extra-markers.min.js') }}"></script>
 <script src="{{ asset('js/helpers.js') }}"></script>
