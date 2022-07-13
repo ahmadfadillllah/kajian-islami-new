@@ -22,13 +22,28 @@ class AuthController extends Controller
 
     public function postLogin(Request $request)
     {
-        $check = Auth::attempt(['email' => $request->email, 'password' => $request->password]);
+        // $check = Auth::attempt(['email' => $request->email, 'password' => $request->password]);
 
-        if ($check) {
+        // if ($check) {
+        //     return redirect()->route('dashboard.index');
+        // } else {
+        //     return redirect()->route('login')->with('info', 'Email / Password salah');
+        // }
+
+        $credentials = $request->validate([
+            'email' => ['required', 'email'],
+            'password' => ['required'],
+        ]);
+
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+
             return redirect()->route('dashboard.index');
-        } else {
-            return redirect()->route('login')->with('info', 'Email / Password salah');
         }
+
+        return back()->withErrors([
+            'email' => 'The provided credentials do not match our records.',
+        ])->onlyInput('email');
     }
 
     public function logout(Request $request)

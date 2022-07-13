@@ -66,8 +66,8 @@
                                                     <select class="form-control" name="kajian_islami_id" id="kajian_islami_id"
                                                            >
                                                            <option value="{{ $kajian_islami ? $kajian_islami->id : '' }}"> -- {{ $kajian_islami ? $kajian_islami->namamasjid : '' }} -- </option>
-                                                           @foreach ($kajian_islamis as $kajian_islami)
-                                                           <option value="{{ $kajian_islami->id }}">{{ $kajian_islami->namamasjid }}</option>
+                                                           @foreach ($kajian_islamis as $ki)
+                                                           <option value="{{ $ki->id }}">{{ $ki->namamasjid }}</option>
                                                            @endforeach
                                                     </select>
                                                 </div>
@@ -112,6 +112,7 @@
         }
     }
     console.log("data_kajian", RUTE_TUJUAN.data_kajian);
+
 
 </script>
 

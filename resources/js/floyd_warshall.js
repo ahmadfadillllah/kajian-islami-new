@@ -37,7 +37,7 @@ function showPosition(position) {
 
 
     var capa = document.getElementById("capa");
-    capa.innerHTML = "latitude: " + latitude + ", longitude: " + ", accuracy: " + accuracy;
+    capa.innerHTML = "Akurasi: " + accuracy;
 
     // call function set map
     setMapGeo();
@@ -191,6 +191,7 @@ window.showRoute = async function(lat, long, idMosque) {
     });
 
 }
+
 
 const print_performa = function(summary) {
     $("#performa").html(JSON.stringify(summary));

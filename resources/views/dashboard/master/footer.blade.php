@@ -8,7 +8,7 @@
 <!-- BEGIN Vendor JS-->
 
 <!-- BEGIN: Page Vendor JS-->
-<script src="{{ asset('vuexy') }}/app-assets/vendors/js/charts/apexcharts.min.js"></script>
+{{-- <script src="{{ asset('vuexy') }}/app-assets/vendors/js/charts/apexcharts.min.js"></script> --}}
 <script src="{{ asset('vuexy') }}/app-assets/vendors/js/extensions/toastr.min.js"></script>
 <script src="{{ asset('vuexy') }}/app-assets/vendors/js/extensions/moment.min.js"></script>
 <script src="{{ asset('vuexy') }}/app-assets/vendors/js/tables/datatable/jquery.dataTables.min.js"></script>
@@ -24,7 +24,7 @@
 <!-- END: Theme JS-->
 
 <!-- BEGIN: Page JS-->
-<script src="{{ asset('vuexy') }}/app-assets/js/scripts/pages/dashboard-analytics.js"></script>
+{{-- <script src="{{ asset('vuexy') }}/app-assets/js/scripts/pages/dashboard-analytics.js"></script> --}}
 <script src="{{ asset('vuexy') }}/app-assets/js/scripts/pages/app-invoice-list.js"></script>
 <!-- END: Page JS-->
 

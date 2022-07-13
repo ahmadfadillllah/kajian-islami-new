@@ -71,12 +71,16 @@
                             </div>
                             <div class="card-body">
                                 <p id="capa"></p>
-                                <button id="show_mosque_all" class="btn btn-primary me-1">Tampilkan Kajian
+                                {{-- <button id="show_mosque_all" class="btn btn-primary me-1">Tampilkan Kajian
                                     Islami
                                 </button>
                                 <button onclick="showMosque('close-in')" class="btn btn-primary me-1">Tampilkan Kajian
                                     Terdekat
-                                </button>
+                                </button> --}}
+                                <div class="demo-inline-spacing">
+                                    <button id="show_mosque_all" class="btn btn-primary">Tampilkan Kajian Islami</button>
+                                    <button onclick="showMosque('close-in')" class="btn btn-dark">Tampilkan Kajian Terdekat</button>
+                                </div>
                             </div>
                         </div>
                     </div>

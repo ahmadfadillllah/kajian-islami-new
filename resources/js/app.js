@@ -133,7 +133,8 @@ function showPosition(position) {
 
 
     var capa = document.getElementById("capa");
-    capa.innerHTML = "latitude: " + latitude + ", longitude: " + longitude + ", accuracy: " + accuracy;
+    // capa.innerHTML = "latitude: " + latitude + ", longitude: " + longitude + ", accuracy: " + accuracy;
+    capa.innerHTML = "Akurasi: " + accuracy;
     console.log("capa.innerHTML", capa.innerHTML)
 
     // call function set map

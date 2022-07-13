@@ -10,11 +10,26 @@ var popup = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 L.popup();
 
+if(navigator.geolocation){ //jika navigator tersedia
+    navigator.geolocation.getCurrentPosition(showPosition, showError);
+    }
+    else{ //jika navigator tidak tersedia
+        console.log("Geolocation is not supported by this device");
+    }
+
+    //jika location allowed
+    function showPosition(position){
+
+        lat_awal = position.coords.latitude;
+        long_awal = position.coords.longitude;
+
+    }
+
 const createControl = (data) => {
     let tujuan = RUTE_TUJUAN.latLong();
     var control = L.Routing.control({
         waypoints: [
-            L.latLng(-5.1358021, 119.4500122),
+            L.latLng(lat_awal, long_awal),
             L.latLng(tujuan.latitude, tujuan.longitude)
         ],
         routeWhileDragging: true,
@@ -182,4 +197,3 @@ function showMosque(params) {
         });
 
 }
-

@@ -4,6 +4,7 @@ namespace App\Imports;
 
 use App\Models\KajianIslami;
 use Maatwebsite\Excel\Concerns\ToModel;
+use Maatwebsite\Excel\Row;
 
 class KajianImport implements ToModel
 {
@@ -15,15 +16,15 @@ class KajianImport implements ToModel
     public function model(array $row)
     {
         return new KajianIslami([
-            'user_id' => $row[1],
-            'namamasjid' => $row[2],
-            'alamat' => $row[3],
-            'materidanwaktukajian' => $row[4],
-            'latlong' => $row[5],
-            'namapengurusmasjid' => $row[8],
-            'no_hp' => $row[9],
-            'jeniskajian' => $row[10],
-            'gambar' => $row[11],
+            'user_id' => 1,
+            'namamasjid' => $row[1],
+            'alamat' => $row[2],
+            'materidanwaktukajian' => $row[3],
+            'latlong' => $row[4],
+            'namapengurusmasjid' => $row[5],
+            'no_hp' => $row[6],
+            'jeniskajian' => $row[7],
+            'gambar' => $row[8]
         ]);
     }
 }
