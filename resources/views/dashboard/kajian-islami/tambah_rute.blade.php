@@ -78,8 +78,8 @@
                                                 </div>
                                                 <div class="mb-1">
                                                     <label class="col-form-label">Keterangan</label>
-                                                    <textarea name="keterangan" class="form-control"
-                                                              placeholder="Keterangan" required></textarea>
+                                                    <input name="keterangan" class="form-control"
+                                                              value="{{ $kajian_islami ? $kajian_islami->namamasjid : "-" }}" required></input>
                                                 </div>
                                                 <textarea name="rute" id="rute" style="display: none"></textarea>
                                                 <div class="mb-1">
