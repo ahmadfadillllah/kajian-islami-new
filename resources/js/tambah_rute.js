@@ -26,11 +26,14 @@ if(navigator.geolocation){ //jika navigator tersedia
     }
 
 const createControl = (data) => {
-    let tujuan = RUTE_TUJUAN.latLong();
+    let titikmasjid = RUTE_TUJUAN.latLong();
+    let titikrute =  RUTE_TUJUAN.latLong();
+    console.log(titikmasjid);
+    console.log(titikrute + 3);
     var control = L.Routing.control({
         waypoints: [
-            L.latLng(lat_awal, long_awal),
-            L.latLng(tujuan.latitude, tujuan.longitude)
+            L.latLng(titikrute.latitude, titikrute.latitude),
+            L.latLng(titikmasjid.latitude, titikmasjid.longitude)
         ],
         routeWhileDragging: true,
         lineOptions: {

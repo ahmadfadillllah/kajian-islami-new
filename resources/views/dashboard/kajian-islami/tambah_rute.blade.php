@@ -7,6 +7,13 @@
         height: 400px;
     }
 </style>
+<script>
+    Swal.fire(
+    'Penting!',
+    'Untuk menambah lintasan, harap tidak terlalu jauh dari titik lokasi Masjid',
+    'warning'
+    )
+</script>
 
 <div class="app-content content ">
     <div class="content-overlay"></div>
