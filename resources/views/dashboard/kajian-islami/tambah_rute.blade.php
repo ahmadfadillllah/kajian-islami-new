@@ -14,6 +14,15 @@
     'warning'
     )
 </script>
+@if (session('info'))
+<script>
+    Swal.fire(
+    'Info!',
+    {{ session('info') }},
+    'info'
+    )
+</script>
+@endif
 
 <div class="app-content content ">
     <div class="content-overlay"></div>

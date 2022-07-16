@@ -133,6 +133,6 @@ class KajianIslamiController extends Controller
         $rute_kajian->keterangan = $request->input("keterangan");
         $rute_kajian->rute = $request->input("rute");
         $rute_kajian->save();
-        return back();
+        return redirect()->back()->with('info', 'Lintasan telah ditambah');
     }
 }
