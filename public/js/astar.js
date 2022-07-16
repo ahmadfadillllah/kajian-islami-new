@@ -338,11 +338,11 @@ function getlokasi() {
 
 function showPosition(position) {
   // set vaue latitude longitude
-  var ketAkurasi;
   latitude = position.coords.latitude;
   longitude = position.coords.longitude;
   var accuracy = position.coords.accuracy;
   var capa = document.getElementById("capa");
+  var ketAkurasi;
   if(accuracy > 500)
   {
     ketAkurasi = "Rendah";

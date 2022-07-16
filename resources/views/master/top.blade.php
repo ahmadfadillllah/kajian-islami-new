@@ -9,7 +9,7 @@
       <meta name="description" content="">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <!-- Place favicon.ico in the root directory -->
-      <link rel="shortcut icon" type="image/x-icon" href="{{ asset('wetland') }}/assets/img/favicon.png">
+      <link rel="shortcut icon" type="image/x-icon" href="{{ asset('vuexy') }}/app-assets/images/ico/logo.png">
       <!-- CSS here -->
       <link rel="stylesheet" href="{{ asset('wetland') }}/assets/css/preloader.css">
       <link rel="stylesheet" href="{{ asset('wetland') }}/assets/css/bootstrap.min.css">
