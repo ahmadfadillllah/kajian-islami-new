@@ -7,18 +7,11 @@
         height: 400px;
     }
 </style>
-<script>
-    Swal.fire(
-    'Penting!',
-    'Untuk menambah lintasan, harap tidak terlalu jauh dari titik lokasi Masjid',
-    'warning'
-    )
-</script>
 @if (session('info'))
-<script>
+    <script>
     Swal.fire(
     'Info!',
-    {{ session('info') }},
+    '{{ session('info') }}',
     'info'
     )
 </script>
@@ -51,11 +44,6 @@
             </div>
         </div>
         <div class="content-body">
-            @if (session('info'))
-                <div class="alert alert-secondary" role="alert">
-                    <strong>Info! </strong> {{ session('info') }}
-                </div>
-            @endif
             <!-- Card Actions Section -->
             <section id="card-actions">
                 <!-- Info table about actions -->
@@ -67,6 +55,7 @@
                             </div>
                             <div class="card-content collapse show">
                                 <div class="card-body">
+                                    <h5>Untuk menambah lintasan, harap tidak terlalu jauh dari titik lokasi Masjid</h5>
                                     <form method="post" action="{{ route('kajian-islami-tambah-rute-store') }}">
                                         <div class="row">
                                             {{ csrf_field() }}
