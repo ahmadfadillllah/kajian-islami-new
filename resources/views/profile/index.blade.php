@@ -55,8 +55,7 @@
                             <script>
                                 Swal.fire(
                                     'Information',
-                                    '{{ session('
-                                    info ') }}',
+                                    '{{ session('info') }}',
                                     'info'
                                 )
 
