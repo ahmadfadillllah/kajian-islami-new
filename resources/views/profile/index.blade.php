@@ -39,8 +39,8 @@
                                     </div>
                                     <!-- profile title -->
                                     <div class="profile-title ms-3">
-                                        <h2 class="text-white">{{ auth()->user()->name }}</h2>
-                                        <p class="text-white">{{ auth()->user()->email }}</p>
+                                        <h2>{{ auth()->user()->name }}</h2>
+                                        <p>{{ auth()->user()->email }}</p>
                                     </div>
 
                                 </div>
