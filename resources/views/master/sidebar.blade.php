@@ -9,7 +9,7 @@
        <div class="sidebar__content">
           <div class="logo mb-40">
              <a href="index.html">
-             <h4>{{ env('APP_NAME') }}</h4>
+             <h4>Kajian Islami</h4>
              </a>
           </div>
           <div class="mobile-menu mobile-menu-2"></div>
