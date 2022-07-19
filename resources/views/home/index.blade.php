@@ -22,7 +22,7 @@
             <div class="row align-items-center">
                 <div class="col-xxl-7 col-xl-6 col-lg-6">
                     <div class="hero__content pr-80">
-                        <h2 class="hero__title wow fadeInUp" data-wow-delay=".3s">{{ env('APP_NAME') }}</h2>
+                        <h2 class="hero__title wow fadeInUp" data-wow-delay=".3s">Kajian Islami</h2>
                         <p class="wow fadeInUp" data-wow-delay=".5s">Aplikasi penentuan lokasi kajian islami di Kota
                             Makassar dengan lintasan terpendek.</p>
                             {{-- <p>Ingin berkontribusi dalam penentuan Lokasi Kajian Masjid yang ada di Kota Makassar?</p>
